@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <a class="navbar-brand text-success  " [routerLink]="['/']">
+    WALCOM
+  </a>
+
+  <button class="navbar navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav">
+      <li>
+        <a class="nav-link text-success" [routerLink]="['/']">หน้าแรก</a>
+      </li>
+      <li *ngIf="!auth.authenticated">
+        <a class="nav-link text-success" [routerLink]="['/login']">เข้าสู่ระบบ</a>
+      </li>
+      <li *ngIf="auth.authenticated">
+        <a class="nav-link text-success" [routerLink]="['/profile']">แสดงข้อมูล</a>
+      </li>
+      <li *ngIf="auth.authenticated">
+          <a class="nav-link text-success" [routerLink]="['/add']">จัดการข้อมูล</a>
+        </li>
+      <li *ngIf="auth.authenticated">
+        <a class="nav-link text-success" (click)="logout()">ออกจากระบบ</a>
+      </li>
+    </ul>
+  </div>
+</nav>

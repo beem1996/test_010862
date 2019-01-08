@@ -1,0 +1,9 @@
+<h1>Add</h1>
+<form (ngSubmit)="addWiki(wikiForm)" #wikiForm="ngForm">
+<label for="name"> Name</label>
+<input type="text" name="name" placeholder="Name" autocomplete="off" ngModel>
+<label for="description"> Description</label>
+<textarea name="description" placeholder="Description" autocomplete="off" ngModel></textarea><br>
+<button type="submit">Submit</button>
+</form>
+<a routerLink="/profile">Back To Wiki List</a>
